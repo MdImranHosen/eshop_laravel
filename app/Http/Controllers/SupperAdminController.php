@@ -11,10 +11,24 @@ session_start();
 
 class SupperAdminController extends Controller
 {
+    
+    public function index(){
+    	$this->AdminAuthCheck();
+    	return view('admin.dashboard');
+    }
+
     public function logout(){
-    	/*Session::put('admin_name',NULL);
-    	Session::put('admin_id',NULL);*/
     	Session::flush();
     	return Redirect::to('/admin');
+    }
+    public function AdminAuthCheck()
+    {
+    	$admin_id = Session::get('admin_id');
+    	if($admin_id){
+          return;
+    	}else{
+    		return Redirect::to('/admin')->send();
+    	}
+
     }
 }

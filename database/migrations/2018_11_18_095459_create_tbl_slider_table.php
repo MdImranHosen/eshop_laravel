@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTblCategoryTable extends Migration
+class CreateTblSliderTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateTblCategoryTable extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_category', function (Blueprint $table) {
-            $table->increments('category_id');
-            $table->string('category_name');
-            $table->string('category_description');
-            $table->tinyInteger('publication_status');
+        Schema::create('tbl_slider', function (Blueprint $table) {
+            $table->increments('slider_id');
+            $table->string('slider_name');
+            $table->longText('slider_description');
+            $table->string('slider_image');
+            $table->string('publication_status');
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class CreateTblCategoryTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tbl_category');
+        Schema::dropIfExists('tbl_slider');
     }
 }

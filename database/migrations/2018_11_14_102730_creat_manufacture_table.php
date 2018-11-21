@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTblCategoryTable extends Migration
+class CreatManufactureTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateTblCategoryTable extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_category', function (Blueprint $table) {
-            $table->increments('category_id');
-            $table->string('category_name');
-            $table->string('category_description');
-            $table->tinyInteger('publication_status');
+        Schema::create('tbl_manufacture', function (Blueprint $table) {
+            $table->increments('manufacture_id');
+            $table->string('manufacture_name');
+            $table->string('manufacture_description');
+            $table->integer('publication_status');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateTblCategoryTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tbl_category');
+        Schema::dropIfExists('tbl_manufacture');
     }
 }
