@@ -1,5 +1,6 @@
 @extends('layout')
 @section('contant')
+@include('slider')
 <div class="features_items"><!--features_items-->
 <h2 class="title text-center">Features Items</h2>
 <?php 
@@ -14,20 +15,20 @@
                 <img src="{{ asset( $v_product->product_image ) }}" height="250" alt="" />
                 <h2>{{ $v_product->product_price }} TK</h2>
                 <p>{{ $v_product->product_name }}</p>
-                <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                <a href="{{ URL::to('/view-prduct/'.$v_product->product_id )}}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
             </div>
             <div class="product-overlay">
                 <div class="overlay-content">
                     <h2>{{ $v_product->product_price }} TK</h2>
-                    <p>{{ $v_product->product_name }}</p>
-                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                    <a href="{{ URL::to('/view-prduct/'.$v_product->product_id )}}"><p>{{ $v_product->product_name }}</p></a>
+                    <a href="{{ URL::to('/view-prduct/'.$v_product->product_id )}}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                 </div>
             </div>
     </div>
     <div class="choose">
         <ul class="nav nav-pills nav-justified">
-            <li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
-            <li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
+            <li><a href="{{ URL::to('/product_by_manufacture/'.$v_product->manufacture_id )}}"><i class="fa fa-plus-square"></i>{{ $v_product->manufacture_name }}</a></li>
+            <li><a href="{{ URL::to('/view-prduct/'.$v_product->product_id )}}"><i class="fa fa-plus-square"></i>View Product</a></li>
         </ul>
     </div>
 </div>

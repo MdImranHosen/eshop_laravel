@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Home | E-Shopper</title>
+    <title>4D NATIONAL SECURITY</title>
     <link href="{{ asset('frontend/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('frontend/css/font-awesome.min.css') }}" rel="stylesheet">
     <link href="{{ asset('frontend/css/prettyPhoto.css') }}" rel="stylesheet">
@@ -17,7 +17,7 @@
     <script src="frontend/js/html5shiv.js"></script>
     <script src="frontend/js/respond.min.js"></script>
     <![endif]-->       
-    <link rel="shortcut icon" href="{{ asset('frontend/images/ico/favicon.ico') }}">
+    <link rel="shortcut icon" href="{{ asset('frontend/images/home/icon.png') }}">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ asset('frontend/images/ico/apple-touch-icon-144-precomposed.png') }}"> 
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ asset('frontend/images/ico/apple-touch-icon-114-precomposed.png') }}">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ asset('frontend/images/ico/apple-touch-icon-72-precomposed.png') }}">
@@ -32,8 +32,8 @@
                     <div class="col-sm-6">
                         <div class="contactinfo">
                             <ul class="nav nav-pills">
-                                <li><a href="#"><i class="fa fa-phone"></i> +2 95 01 88 821</a></li>
-                                <li><a href="#"><i class="fa fa-envelope"></i> info@domain.com</a></li>
+                                <li><a href="#"><i class="fa fa-phone"></i> +88 019 12070200</a></li>
+                                <li><a href="#"><i class="fa fa-envelope"></i> sohel.china@gmail.com</a></li>
                             </ul>
                         </div>
                     </div>
@@ -57,7 +57,7 @@
                 <div class="row">
                     <div class="col-sm-4">
                         <div class="logo pull-left">
-                            <a href="index.php"><img src="{{ asset('frontend/images/home/logo.png') }}" alt="" /></a>
+                            <a href="{{ URL::to('/') }}"><img src="{{ asset('frontend/images/home/4d logo.png') }}" alt="" /><!-- <strong><span style="color: red;">4D</span> NATIONAL <span style="color: blue;">SECURITY</span></strong> --></a>
                         </div>
                         <div class="btn-group pull-right">
                             <div class="btn-group">
@@ -88,8 +88,8 @@
                             <ul class="nav navbar-nav">
                                 <li><a href="#"><i class="fa fa-user"></i> Account</a></li>
                                 <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
-                                <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-                                <li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+                                <li><a href="{{ URL::to('/login-check') }}"><i class="fa fa-crosshairs"></i> Checkout</a></li>
+                                <li><a href="{{ URL::to('/show-cart') }}"><i class="fa fa-shopping-cart"></i> Cart</a></li>
                                 <li><a href="login.html"><i class="fa fa-lock"></i> Login</a></li>
                             </ul>
                         </div>
@@ -117,8 +117,8 @@
                                     <ul role="menu" class="sub-menu">
                                         <li><a href="shop.html">Products</a></li>
                                         <li><a href="product-details.html">Product Details</a></li> 
-                                        <li><a href="checkout.html">Checkout</a></li> 
-                                        <li><a href="cart.html">Cart</a></li> 
+                                        <li><a href="{{ URL::to('/login-check') }}">Checkout</a></li> 
+                                        <li><a href="{{ URL::to('/show-cart') }}">Cart</a></li> 
                                         <li><a href="login.html">Login</a></li> 
                                     </ul>
                                 </li> 
@@ -142,63 +142,7 @@
             </div>
         </div><!--/header-bottom-->
     </header><!--/header-->
- <?php $all_published_slider=DB::table('tbl_slider')
-                                ->where('publication_status',1)
-                                ->get(); 
-                           
-                                ?>   
-<section id="slider"><!--slider-->
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div id="slider-carousel" class="carousel slide" data-ride="carousel">
-                        <ol class="carousel-indicators">
-                            <li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
-                            <li data-target="#slider-carousel" data-slide-to="1"></li>
-                            <li data-target="#slider-carousel" data-slide-to="2"></li>
-                        </ol>
-                        
-                        <div class="carousel-inner">
-                             <?php
-                               $all_published_slider=DB::table('tbl_slider')
-                                                     ->where('publication_status',1)
-                                                     ->get();
-                                 $i=1;
-                                foreach ($all_published_slider as $v_slider){
-                                                      
-                                      if($i==1){             
-                            ?>
-                            <div class="item active">
-                                <?php }else{?>
-                                <div class="item">
-                                <?php } ?>
-                                <div class="col-sm-6">
-                                    <h1><span>4D</span>-VISION</h1>
-                                    <h2>{{ $v_slider->slider_name }}</h2>
-                                    <p>{{ $v_slider->slider_description }} </p>
-                                    <button type="button" class="btn btn-default get">Get it now</button>
-                                </div>
-                                <div class="col-sm-6">
-                                    <img src="{{ URL::to( $v_slider->slider_image ) }}" class="girl img-responsive" alt="" />
-                                    <img src="{{ asset('frontend/images/home/pricing.png') }}"  class="pricing" alt="" />
-                                </div>
-                            </div>
-                            <?php $i++; } ?>
-                            </div>                      
-                        <a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
-                            <i class="fa fa-angle-left"></i>
-                        </a>
-                        <a href="#slider-carousel" class="right control-carousel hidden-xs" data-slide="next">
-                            <i class="fa fa-angle-right"></i>
-                        </a>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-    </section><!--/slider-->
-
+@yield('slider')
     <section>
         <div class="container">
             <div class="row">
@@ -234,7 +178,7 @@
                                      foreach($all_published_manufacture as $v_manufacture){
 
                                        ?>
-                                    <li><a href="#"> <span class="pull-right">(50)</span>{{ $v_manufacture->manufacture_name }}</a></li>
+                                    <li><a href="{{ URL::to('/product_by_manufacture/'.$v_manufacture->manufacture_id )}}"> <span class="pull-right">(50)</span>{{ $v_manufacture->manufacture_name }}</a></li>
                                      <?php } ?>
                                 </ul>
                             </div>
