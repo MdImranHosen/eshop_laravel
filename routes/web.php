@@ -34,8 +34,14 @@ Route::post('/update-cart','CartController@update_cart_qyt');
 //Checkout Route Manage.....
 Route::get('/login-check','CheckoutController@login_check');
 Route::post('/customer-regitration','CheckoutController@customer_registration');
-
-
+Route::get('/checkout','CheckoutController@checkout');
+Route::post('/save-shipping-details','CheckoutController@save_shipping_details');
+//Customer Login and Logout Route here.....
+Route::get('/customer-logout', 'CheckoutController@logout');
+Route::post('/customer-login','CheckoutController@customer_login');
+//Customer Payment Route here....
+Route::get('/payment','CheckoutController@payment');
+Route::post('/order-place','CheckoutController@order_place');
 
 //Backend route...............
 Route::get('/logout', 'SupperAdminController@logout');

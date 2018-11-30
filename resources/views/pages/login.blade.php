@@ -6,13 +6,10 @@
 				<div class="col-sm-4 col-sm-offset-1">
 					<div class="login-form"><!--login form-->
 						<h2>Login to your account</h2>
-						<form action="" method="post">
+						<form action="{{ url('/customer-login') }}" method="post">
+							{{ csrf_field() }}
 							<input type="email" placeholder="Email Address" name="customer_email" required=""/>
 							<input type="password" placeholder="Password" name="password" />
-							<span>
-								<input type="checkbox" class="checkbox"> 
-								Keep me signed in
-							</span>
 							<button type="submit" class="btn btn-default">Login</button>
 						</form>
 					</div><!--/login form-->
@@ -23,7 +20,7 @@
 				<div class="col-sm-4">
 					<div class="signup-form"><!--sign up form-->
 						<h2>New User Signup!</h2>
-						<form action="{{url('/customer-regitration')}}" method="post">
+						<form action="{{ url('/customer-regitration') }}" method="post">
 							{{ csrf_field() }}
 							<input type="text" placeholder="Full Name" name="customer_name" required=""/>
 							<input type="email" placeholder="Email Address" name="customer_email" required=""/>

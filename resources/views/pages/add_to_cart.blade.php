@@ -133,8 +133,12 @@
 							<li>Shipping Cost <span>Free</span></li>
 							<li>Total <span>{{ Cart::total() }}</span></li>
 						</ul>
-							<a class="btn btn-default update" href="">Update</a>
-							<a class="btn btn-default check_out" href="{{ URL::to('/login-check') }}">Check Out</a>
+							<?php $customer_id = Session::get('customer_id'); ?>
+                                @if($customer_id != NULL)
+                                <a href="{{ URL::to('/checkout') }}" class="btn btn-default check_out"> Checkout</a>
+                                @else
+                                <a href="{{ URL::to('/login-check') }}" class="btn btn-default check_out"> Checkout</a>
+                                @endif
 					</div>
 				</div>
 			</div>
