@@ -79,23 +79,23 @@
 						<div class="btn-group paymentBtnGroup btn-group-justified" data-toggle="buttons">
 				            <label class="btn paymentMethod active">
 				            	<div class="method visa"></div>
-				                <input type="radio" name="payment_gateway" value="handcash" checked> 
+				                <input type="radio" name="payment_method" value="handcash"> 
 				            </label>
 				            <label class="btn paymentMethod">
 				            	<div class="method master-card"></div>
-				                <input type="radio" name="payment_gateway" value="Paypal"> 
+				                <input type="radio" name="payment_method" value="card"> 
 				            </label>
 				            <label class="btn paymentMethod">
 			            		<div class="method amex"></div>
-				                <input type="radio" name="payment_gateway" value="Bakash">
+				                <input type="radio" name="payment_method" value="bakash">
 				            </label>
 				       <label class="btn paymentMethod">
 			             		<div class="method vishwa"></div>
-				                <input type="radio" name="payment_gateway" value="Payza"> 
+				                <input type="radio" name="payment_method" value="payza"> 
 				            </label>
 				            <label class="btn paymentMethod">
 			            		<div class="method ez-cash"></div>
-				                <input type="radio" name="payment_gateway" value="EZcash"> 
+				                <input type="radio" name="payment_method" value="ezcash"> 
 				            </label> 
 				         
 				        </div>        

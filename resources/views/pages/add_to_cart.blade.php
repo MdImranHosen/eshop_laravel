@@ -133,9 +133,14 @@
 							<li>Shipping Cost <span>Free</span></li>
 							<li>Total <span>{{ Cart::total() }}</span></li>
 						</ul>
-							<?php $customer_id = Session::get('customer_id'); ?>
-                                @if($customer_id != NULL)
+							<?php 
+							$customer_id = Session::get('customer_id');
+							$shipping_id = Session::get('shipping_id');
+							?>
+                                @if($customer_id != NULL && $shipping_id == NULL)
                                 <a href="{{ URL::to('/checkout') }}" class="btn btn-default check_out"> Checkout</a>
+                                @elseif($customer_id != NULL && $shipping_id != NULL)
+                                <a href="{{ URL::to('/payment') }}" class="btn btn-default check_out"> Checkout</a>
                                 @else
                                 <a href="{{ URL::to('/login-check') }}" class="btn btn-default check_out"> Checkout</a>
                                 @endif

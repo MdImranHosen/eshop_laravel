@@ -334,7 +334,7 @@
 								<li><a class="submenu" href="{{ URL::to('/all-slider') }}"><i class="icon-file-alt"></i><span class="hidden-tablet"> All Slider </span></a></li>
 							</ul>
 						</li>
-						<li><a href="chart.html"><i class="icon-list-alt"></i><span class="hidden-tablet"> Socail Link</span></a></li>
+						<li><a href="{{ URL::to('/manage-order') }}"><i class="icon-list-alt"></i><span class="hidden-tablet"> Manage Order </span></a></li>
 						<li><a href="typography.html"><i class="icon-font"></i><span class="hidden-tablet"> Shop Name</span></a></li>
 						<li><a href="gallery.html"><i class="icon-picture"></i><span class="hidden-tablet"> Delivery Man </span></a></li>
 					</ul>

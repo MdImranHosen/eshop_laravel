@@ -90,3 +90,7 @@ Route::post('/admin-dashboard', 'AdminController@dashboard');
  Route::get('/unactive-slider/{slider_id}', 'SliderController@unactive_slider');
  Route::get('/active-slider/{slider_id}', 'SliderController@active_slider');
  Route::get('/delete-slider/{slider_id}', 'SliderController@delete_slider');
+
+ // Manage order Route here...
+Route::get('/manage-order','CheckoutController@manage_order');
+Route::get('/view-order/{order_id}','CheckoutController@view_order_id');
