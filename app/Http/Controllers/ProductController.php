@@ -89,12 +89,67 @@ class ProductController extends Controller
     }
 
 
+//Product Edit Qqery.....
+
+ public function edit_product($product_id)
+    {  
+        $product_info=DB::table('tbl_products')
+                     ->where('product_id',$product_id)
+                     ->first();
+       $product_info=view('admin.edit_product')
+                ->with('product_info',$product_info);
+       return view('admin_layout')
+                ->with('admin.edit_product',$product_info);
+    }
+     public function update_product(Request $request,$product_id)
+    {
+         $data=array();
+         $data['product_name']=$request->product_name;
+         $data['category_id']=$request->category_id;
+         $data['manufacture_id']=$request->manufacture_id;
+         $data['product_short_description']=$request->product_short_description;
+         $data['product_long_description']=$request->product_long_description;
+         $data['product_price']=$request->product_price;
+         $data['product_size']=$request->product_size;
+         $data['product_color']=$request->product_color;
+        $image=$request->file('product_image');
+    if ($image) {
+       $image_name=str_random(20);
+       $ext=strtolower($image->getClientOriginalExtension());
+       $image_full_name=$image_name.'.'.$ext;
+       $upload_path='images/';
+       $image_url=$upload_path.$image_full_name;
+       $success=$image->move($upload_path,$image_full_name);
+       if ($success) {
+         // $data['product_image']=$image_url;
+         //    DB::table('tbl_products')->insert($data);
+         //    Session::put('message','Product added successfully!!');
+         //    return Redirect::to('/add-product');
+         // echo "<pre>";
+         // print_r($data);
+         // echo "</pre>";
+         // exit();
+            
+       }else{
+       }
+    }else{
+      DB::table('tbl_products')->where('product_id',$product_id)->update($data);
+          Session::put('message','Product Update Successfully!');
+            return Redirect::to('/all-product');
+    }
+        /*echo "<pre>";
+         print_r($data);
+        echo "</pre>";*/
+         // DB::table('tbl_manufacture')
+         //     ->where('manufacture_id',$manufacture_id)
+         //     ->update($data);
+         //     Session::get('message','Manufacture update successfully !');
+         //     return Redirect::to('/all-manufacture');
+    }
 
 
 
-
-
-
+// end Product query
     public function AdminAuthCheck()
     {
       $admin_id = Session::get('admin_id');
