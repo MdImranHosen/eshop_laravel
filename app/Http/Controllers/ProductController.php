@@ -121,14 +121,11 @@ class ProductController extends Controller
        $image_url=$upload_path.$image_full_name;
        $success=$image->move($upload_path,$image_full_name);
        if ($success) {
-         // $data['product_image']=$image_url;
-         //    DB::table('tbl_products')->insert($data);
-         //    Session::put('message','Product added successfully!!');
-         //    return Redirect::to('/add-product');
-         // echo "<pre>";
-         // print_r($data);
-         // echo "</pre>";
-         // exit();
+        $data['product_image']=$image_url;
+
+          DB::table('tbl_products')->where('product_id',$product_id)->update($data);
+          Session::put('message','Product Updated Successfully!');
+          return Redirect::to('/all-product');
             
        }else{
        }
@@ -137,15 +134,7 @@ class ProductController extends Controller
           Session::put('message','Product Update Successfully!');
             return Redirect::to('/all-product');
     }
-        /*echo "<pre>";
-         print_r($data);
-        echo "</pre>";*/
-         // DB::table('tbl_manufacture')
-         //     ->where('manufacture_id',$manufacture_id)
-         //     ->update($data);
-         //     Session::get('message','Manufacture update successfully !');
-         //     return Redirect::to('/all-manufacture');
-    }
+  }
 
 
 

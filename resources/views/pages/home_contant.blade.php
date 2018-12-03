@@ -328,7 +328,21 @@
 
 <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
 <div class="carousel-inner">
-    <div class="item active">   
+   <?php
+    /* $rec_product = DB::table('tbl_category')
+                    ->where('publication_status',1)
+                    ->get();*/
+   ?>
+    <div class="item active"> 
+      <?php 
+       /* $rec_published_products = DB::table('tbl_products')
+                  ->where('publication_status',1)
+                  ->limit(3)
+                  ->get();*/
+
+         /*foreach($rec_published_products as $v_product_p){*/
+
+        ?>
         <div class="col-sm-4">
             <div class="product-image-wrapper">
                 <div class="single-products">
@@ -342,6 +356,8 @@
                 </div>
             </div>
         </div>
+       <?php /*}*/ ?>
+
         <div class="col-sm-4">
             <div class="product-image-wrapper">
                 <div class="single-products">
