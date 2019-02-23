@@ -1,12 +1,19 @@
+<!-- 
+=> Country: Bangladesh
+=> Developer: Md Imran Hosen
+=> Github: www.github.com/MdImranHosen
+=> Facebook: www.fb.com/Md.ImranHosen.up
+=> Phone: +880 1983912645
+ -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<!-- start: Meta -->
 	<meta charset="utf-8">
 	<title>admin</title>
-	<meta name="description" content="Metro Admin Template.">
-	<meta name="author" content="Łukasz Holeczek">
-	<meta name="keyword" content="Metro, Metro UI, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+	<meta name="description" content="Laravel Project">
+	<meta name="author" content="Md.Imran Hosen">
+	<meta name="keyword" content="laravel project">
 	<!-- end: Meta -->
 	<!-- start: Mobile Specific -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
